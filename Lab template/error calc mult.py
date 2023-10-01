@@ -19,9 +19,7 @@ final_error = ((first_parameter)*(second_parameter)) * ( ((delta_first)/(first_p
 
 #the above formula is for the error calculation
 
-final_val = (first_parameter)*(second_parameter)
-
-#final value
+final_val = (first_parameter)*(second_parameter) #final value
 
 
 print("final value: " + str(final_val)) #prints final value
