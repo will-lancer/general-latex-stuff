@@ -12,6 +12,6 @@ Some alterations I made:
 
 Overview of files included:
 * `lab template.tex`: this is the file you will be editing. It has all of the stuff you need for editing and doing the lab.
-* `labby boi`: this is the formatting file. You will need to load it into the thing you're using to write LaTeX in.
+* `labby boi.tex`: this is the formatting file. You will need to load it into the thing you're using to write LaTeX in.
 * `error calc div.py`: this is a super quick py file I made to do error propagation calculations for me. This is used for division, as you might guess from the name.
 * `error calc mult.py`: this is a py file used for multiplication error propagation.
