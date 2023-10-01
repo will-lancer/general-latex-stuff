@@ -1,0 +1,211 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 4.0 (March 21, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@latextemplates.com)
+% Linux and Unix Users Group at Virginia Tech Wiki
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	letterpaper, % Paper size, specify a4paper (A4) or letterpaper (US letter)
+	10pt, % Default font size, specify 10pt, 11pt or 12pt]
+]{CSUniSchoolLabReport}
+
+\newcommand{\dd}[0]{\text{d}}
+\usepackage{multicol}
+
+%----------------------------------------------------------------------------------------
+%	REPORT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{*Title*\\
+} % Report title
+
+\author{William Lancer} % name
+
+\date{*Date*} % Date of the report
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Insert the title, author and date using the information specified above
+
+\begin{center}
+	\begin{tabular}{l r}
+		Date Performed: & *Date* \\ % Date the experiment was performed
+		TA name: & Siqi Chen\\ %TA name
+		Instructor: & Professor Ionas % Instructor/supervisor
+	\end{tabular}
+\end{center}
+
+% If you need to include an abstract, uncomment the lines below
+%\begin{abstract}
+%	Abstract text
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE
+%----------------------------------------------------------------------------------------
+\vspace{5in}
+\section{Introduction}
+*Theory/concepts behind lab, and explain equations being experimentally tested*
+\subsection{Objective}
+*Main objective(s) of lab and how (in one sentence) it will be accomplished*
+\textbf{Hypotheses}:
+*Hypotheses (expected results/trends)*
+\subsection{Relevant Equations}
+*Relevant equations*
+\subsection{Testing set-up}
+*Testing set-ups*
+
+\begin{multicols}{2}
+\subsubsection{First test}
+*Test one*
+    \begin{enumerate}
+    \item *procedure*
+\end{enumerate}
+
+\subsubsection{Second test}
+*test two*
+\begin{enumerate}
+    \item *procedure*
+\end{enumerate}
+
+\subsubsection{Third test}
+*test three*
+    \begin{enumerate}
+        \item *procedure*
+    \end{enumerate}
+\end{multicols}
+
+% experimental set up plus selfies
+
+% \begin{figure}*H*
+%     \centering
+%     \includegraphics*width=0.8\textwidth*{Figures/PHY 133 experimental set-up.jpg}
+%     \caption{*caption*}
+% \end{figure}
+
+\section{Experimental Data}
+
+\subsection{First test}
+\subsubsection{Tables and graphs}
+
+% \begin{table}*H*
+% \centering
+%     \begin{tabular}{|c|c|c|c|}
+%     \hline
+%      & Measured acceleration (m/s$^2$) & Predicted $\dd \mathbf{v}/ \dd t$ (m/s$^2$) & Measured $\dd \mathbf{v}/ \dd t$ (m/s$^2$)\\
+%     \hline
+%     Trial one & $2.522$  & $2.522$  & $3.86$ \\
+%     Trial two & $1.102$  & $1.102$  & $1.36$ \\
+%     Trial three & $1.677$  & $1.677$  & $2.22$ \\
+%     \hline
+% \end{tabular}
+% \caption{*caption*}
+% \end{table}
+
+% \begin{table}*H*
+% \centering
+%     \begin{tabular}{|c|c|c|c|}
+%     \hline
+%      & Measured acceleration (m/s$^2$) & Predicted $\dd \mathbf{v}/ \dd t$ (m/s$^2$) & Measured $\dd \mathbf{v}/ \dd t$ (m/s$^2$)\\
+%     \hline
+%     Trial one & $2.522$  & $2.522$  & $3.86$ \\
+%     Trial two & $1.102$  & $1.102$  & $1.36$ \\
+%     Trial three & $1.677$  & $1.677$  & $2.22$ \\
+%     \hline
+% \end{tabular}
+% \caption{*caption*}
+% \end{table}
+
+\subsubsection{Error analysis}
+*error*
+
+\subsubsection{Comments on data}
+*comments on data*
+
+\subsection{Second Test}
+\subsubsection{Tables and graphs}
+
+% \begin{figure}*H*
+%     \centering
+%     \includegraphics*scale = 0.3*{Figures/PHY 133 graph one.png}
+%     \caption{*caption*}
+% \end{figure}
+
+
+% \begin{table}*H*
+%     \centering
+%     \begin{tabular}{|c|c|c|}
+%      \hline
+%      & Measured velocity (m/s)& Measured $\dd \mathbf{x}/ \dd t$ (m/s)\\
+%      \hline
+%      Positive & 0.281 & 0.280\\
+%      Negative & -0.371 & -0.360\\
+%      \hline
+%     \end{tabular}
+%     \caption{*caption*}
+% \end{table}
+
+% \begin{table}*H*
+%     \centering
+%     \begin{tabular}{|c|c|c|}
+%      \hline
+%      & Measured $\int_{t_0}^{t_1} \mathbf{v} \, \dd t$ (m)& Measured $\Delta \mathbf{x}$ (m)\\
+%      \hline
+%      Positive & 0.146 & 0.150\\
+%      Negative & -0.148 & -0.152\\
+%      \hline
+%     \end{tabular}
+%     \caption{*caption*}
+% \end{table}
+
+%Two different figures side by side
+
+%\begin{figure}[H]
+   % \centering
+    %\begin{minipage}{0.45\textwidth}
+        %\centering
+        %\includegraphics[width=0.9\textwidth]{Figures/PHY 133 LAB 2 graph 1.png} % first figure itself
+        %\caption{Force vs time and acceleration vs time for all five peaks.}
+   % \end{minipage}\hfill
+%    \begin{minipage}{0.45\textwidth}
+   %     \centering
+      %  \includegraphics[width=0.9\textwidth]{Figures/PHY 133 LAB 2 graph 2.png} % second figure itself
+        %\caption{Force vs time and acceleration vs time for one peak.}
+  %  \end{minipage}
+%\end{figure}
+
+\subsubsection{Error analysis}
+*error*
+\subsubsection{Comments on data}
+*comments*
+
+\section{Conclusions}
+*State main findings of lab (were hypotheses supported or not?)*\\
+*Discuss if trends seen were or were not expected, based on theory behind the lab*\\
+*State final experimental values and errors for parameters of interest*\\
+*Discuss if accepted value falls within your error range, for estimating parameters*\\
+*Mention any observed outliers in data, and justify their removal, if removed during data
+analysis*\\
+*State sources of error (from human error and inherent in lab setup equipment), and
+suggest potential solutions/fixes*
+
+\subsection{Discussion Questions}
+
+\end{document}
