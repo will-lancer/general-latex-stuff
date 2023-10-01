@@ -15,9 +15,9 @@ delta_first = float(input("error first: ")) #error first
 delta_second = float(input("error second: ")) #error second
 
 final_error = ((first_parameter)*(second_parameter)) * ( ((delta_first)/(first_parameter))**2 + 
-(delta_second)/(second_parameter)**2)**(1/2)
+((delta_second)/(second_parameter))**2 )**(1/2)
 
-#the above formual is for the error calculation
+#the above formula is for the error calculation
 
 final_val = (first_parameter)*(second_parameter)
 
