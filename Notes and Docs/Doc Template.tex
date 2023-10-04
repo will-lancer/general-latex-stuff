@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{william}
+\usepackage{graphicx} %pictures
+\usepackage{wrapfig} %for wrapping pictures
+\usepackage{pgfplots} %graphs
+\usepackage[makeroom]{cancel} %for striking out math
+
+% headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Will Lancer}
+\chead{}
+\rhead{Right header}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+
+\newcommand{\bigtitle}[1]{
+    \begin{center}
+    \huge \textbf{#1}
+    \end{center}
+}
+
+\makeatletter
+\newtheoremstyle{mystyle}
+{\topsep}               % space above
+{\topsep}               % space below
+{}                      % bodyfont
+{}                      % indent
+{\bfseries}             % headfont
+{}                      % punctuation
+{0.6em}                 % space after head
+{\llap{[\ptfmt{\arabic{cpts}}]\hspace{.6em}}\thmname{#1}\thmnumber{ #2}\thmnote{\normalfont{ (#3)}}{\bfseries .}}  %theoremheadspec
+\theoremstyle{mystyle}
+\newtheorem{pproblem}{Problem}
+\makeatother
+
+\linespread{1.03} % give a little extra room
+\setlength{\parindent}{0.2in} % reduce paragraph indent a bit
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\bigtitle{Title}
+
+\end{document}

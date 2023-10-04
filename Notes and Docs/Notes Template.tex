@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+
+% basic packages
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{william}
+\usepackage{lipsum}
+
+% page formatting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\sectionmark}[1]{\markright{\textsf{\arabic{section}. #1}}}
+\renewcommand{\subsectionmark}[1]{}
+\lhead{\textbf{\thepage} \ \ \nouppercase{\rightmark}}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\setlength{\headheight}{14pt}
+
+\linespread{1.03} % give a little extra room
+\setlength{\parindent}{0.2in} % reduce paragraph indent a bit
+\setcounter{secnumdepth}{2} % no numbered subsubsections
+\setcounter{tocdepth}{2} % no subsubsections in ToC
+
+% color boxes
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{theorems}
+\newtcbtheorem{psexample}{Example}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{ex}
+\newtcbtheorem{psidea}{Idea}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{id}
+\newtcbtheorem{psremark}{Remark}{colback=purple!10,colframe=purple!40!black,fonttitle=\bfseries,breakable,enhanced}{rm}
+\newtcbtheorem{pssolution}{Solution}{colback=orange!10,colframe=orange!40!black,fonttitle=\bfseries,breakable,enhanced}{sn}
+\newtcbtheorem{pstrap}{Trap}{colback=red!10,colframe=red!40!black,fonttitle=\bfseries,breakable,enhanced}{tr}
+\newtcbtheorem{pscasestudy}{Case Study}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{cs}
+\tcbset{noparskip/.style={before={\par\pagebreak[0]\medskip\parindent=0pt},
+after={\par\medskip}}}
+
+\begin{document}
+
+% make title page
+\thispagestyle{empty}
+\bigskip \
+\vspace{0.1cm}
+
+\begin{center}
+{\fontsize{22}{22} \selectfont Lecture Notes\footnote{This document was made using a note \& color-box template from Kevin Zhou;
+please see his website \href{https://knzhou.github.io}{here}.} on}
+\vskip 16pt
+{\fontsize{36}{36} \selectfont \bf \sffamily [subject]}
+\vskip 24pt
+{\fontsize{18}{18} \selectfont \rmfamily Will Lancer} 
+\vskip 6pt
+{\fontsize{14}{14} \selectfont \ttfamily will.m.lancer@gmail.com} 
+\vskip 24pt
+\end{center}
+
+{\parindent0pt \baselineskip=15.5pt}
+\noin
+Description of notes
+
+% make table of contents
+\newpage
+\microtoc
+\newpage
+
+% main content
+\section{}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
