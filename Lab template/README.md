@@ -1,5 +1,5 @@
 This is my template for general physics lab stuff.
-The original code was found by Googling ``Lab template'';
+The original code was found by Googling "Lab template";
 you can find the original source [here](https://www.latextemplates.com/template/university-school-laboratory-report).
 
 Some alterations I made:
