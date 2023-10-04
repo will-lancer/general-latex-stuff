@@ -5,7 +5,7 @@ to this repository instead of emailing them my templates
 for LaTeX.
 
 NOTE: for most of my templates, the base code was
-given by someone else, and I added my own stuff to
+written by someone else, and I added my own stuff to
 it. Explicit credit is given in the template READMEs.
 I customized the templates in here, and added things I found convenient;
 I do not claim originality for the base templates that I work with.
