@@ -157,20 +157,18 @@
 \newcommand{\three}{\mathbf{III}}
 \newcommand{\from}{\leftarrow}
 \newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % it's dbar!
-\newcommand{\reals}{\mathbb{R}}
-\newcommand{\ints}{\mathbb{Z}}
-\newcommand{\natty}{\mathbb{N}}
-\newcommand{\rational}{\mathbb{Q}}
-\newcommand{\complex}{\mathbb{C}}
-\newcommand{\xto}[1]{\xrightarrow{#1}}
-\newcommand{\unitv}[1]{\hat{\v{#1}}}
+\newcommand{\reals}{\mathbb{R}} %reals
+\newcommand{\ints}{\mathbb{Z}} %integers
+\newcommand{\natty}{\mathbb{N}} %naturals
+\newcommand{\xto}[1]{\xrightarrow{#1}} %right arrow with stuff over it
+\newcommand{\unitv}[1]{\hat{\v{#1}}} %unit vector
 \newcommand{\twovec}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 \newsavebox{\@brx} % double angle brackets
-\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}% left angle bracket
   \mathopen{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
-\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}% right angle bracket
   \mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
-\newcommand{\grad}[0]{\nabla}
+\newcommand{\grad}[0]{\nabla} %no one calls it nabla anymore...
 
 
 
