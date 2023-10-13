@@ -296,6 +296,9 @@
 \newtheorem*{proofsketch}{Proof Sketch}
 \renewenvironment{proof}{\noindent {\bfseries Proof.}\,}{\medskip}
 
+%environments
+\newenvironment{alphamerate}{\begin{enumerate}[(a)]}{\end{enumerate}}
+
 %the william magic
 \newcommand{\pd}[2][f]{\frac{\partial #1}{\partial #2}} %partial derivatives
 \newcommand{\ra}[0]{\xrightarrow[]{}} %right arrow
@@ -339,6 +342,7 @@
 \newcommand{\elec}[0]{\mathbf{E}} %bold electric field
 \newcommand{\magn}[0]{\mathbf{B}} %bold magnetic field
 \newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}} %griffiths r
+\newcommand{\vel}[0]{\mathbf{u}} %velocity
 
 %EZ matrices
 %Matrix commands; two letters after pmat/bmat = #rows #columns. o = one, t = two, th = three. +4 is rare enough to not really save time.
@@ -414,6 +418,35 @@
 #1 & #2 & #3
 \end{bmatrix}}
 
-%environments
-\newenvironment{alphamerate}{\begin{enumerate}[(a)]}{\end{enumerate}}
+%among us character in latex :3
+
+\newcommand{\amogus}[3][]{%
+\begin{tikzpicture}[every path/.style={very thick}]
+  % Backpack
+  \draw[fill=#2, rounded corners = 3mm] (1,1) rectangle ++(0.8,3.2);
+  % Body
+  \draw[fill=#2, rounded corners = 3mm] (1.5,0) -- (1.5,5)
+  arc (124.8074:103.8454:5) arc (80.6307:58.1808:5)-- (5,0) -- (3.7,0)
+  {[rounded corners = 0mm] -- (3.7,1) coordinate(A) -- (2.7,1)}
+  -- (2.7,0) -- cycle;
+  % Eyes
+  \ifthenelse{\equal{#1}{angry}}
+    {\draw[fill=#3]  plot[smooth cycle, tension=.7] coordinates
+      {(4.3,4.7) (5.2,4.6) (5.2,3.5) (4.2,3.2) (3.1,3.5) (3.1,4.7)};}
+    {\ifthenelse{\equal{#1}{very angry}}
+      {\draw[fill=#3]  plot[smooth cycle, tension=.7] coordinates
+        {(4.4,4.3) (5.2,4.6) (5.2,3.5) (4.2,3.6) (3.1,3.5) (3.1,4.7)};}
+      {\draw[fill=#3]  plot[smooth cycle, tension=.7] coordinates
+        {(4.3,4.9) (5.2,4.6) (5.2,3.5) (4.2,3.2) (3.1,3.5) (3.1,4.7)};}
+    }
+  % Leg detail
+  \draw plot[smooth, tension=.7] coordinates {(A) (3.9,1) (4.2,1.1)};
+\end{tikzpicture}
+}
+
+%how to use amog us
+
+%\amongus[emotion (optional)]{color of body}{color of visor}
+
+%https://tex.stackexchange.com/questions/567009/there-is-a-tikz-impostor-among-us ---------> credit for amog us
 
