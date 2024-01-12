@@ -18,6 +18,6 @@ if it's the only thing you take.
 The files in this folder:
 * `Doc template.tex`. This is, as you might guess, for general document use. I also use it for homework.
 * `Notes template.tex`. Unless you have an Albert Einstein intelligence level and Sherlock Holmes level
-sleuthing skills, I don't know if you would have been able to guess that this is a template for notes.
+sleuthing skills, I don't know if you would have been able to guess that this is a template for notes... which it is.
 * `william.sty`. This is the formatting file for the documents. You will need to load it into your editor to use either of the templates.
 Feel free to boot-gang my files at any time and change everything to your name and likeness ❤️.
