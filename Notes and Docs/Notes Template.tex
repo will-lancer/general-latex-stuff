@@ -26,18 +26,6 @@
 \setcounter{secnumdepth}{2} % no numbered subsubsections
 \setcounter{tocdepth}{2} % no subsubsections in ToC
 
-% color boxes
-\usepackage[many]{tcolorbox}
-\tcbuselibrary{theorems}
-\newtcbtheorem{psexample}{Example}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{ex}
-\newtcbtheorem{psidea}{Idea}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{id}
-\newtcbtheorem{psremark}{Remark}{colback=purple!10,colframe=purple!40!black,fonttitle=\bfseries,breakable,enhanced}{rm}
-\newtcbtheorem{pssolution}{Solution}{colback=orange!10,colframe=orange!40!black,fonttitle=\bfseries,breakable,enhanced}{sn}
-\newtcbtheorem{pstrap}{Trap}{colback=red!10,colframe=red!40!black,fonttitle=\bfseries,breakable,enhanced}{tr}
-\newtcbtheorem{pscasestudy}{Case Study}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{cs}
-\tcbset{noparskip/.style={before={\par\pagebreak[0]\medskip\parindent=0pt},
-after={\par\medskip}}}
-
 \begin{document}
 
 % make title page
@@ -47,7 +35,8 @@ after={\par\medskip}}}
 
 \begin{center}
 {\fontsize{22}{22} \selectfont Lecture Notes\footnote{This document was made using a note \& color-box template from Kevin Zhou;
-please see his website \href{https://knzhou.github.io}{here}.} on}
+please see his website \href{https://knzhou.github.io}{here}.} on} %feel free to delete the knzhou cred, I just added this in case I post
+%the notes somewhere; want to give credit where credit is due yk.
 \vskip 16pt
 {\fontsize{36}{36} \selectfont \bf \sffamily [subject]}
 \vskip 24pt
