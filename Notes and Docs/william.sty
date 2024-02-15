@@ -28,23 +28,6 @@
 \usepackage{listings}
 \newenvironment{python}{\begin{lstlisting}[language=Python]}{\end{lstlisting}}
 
-%griffiths script r code
-\def\rcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{Figures/ScriptR}}$}}}
-\def\brcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{Figures/BoldR}}$}}}
-\def\hrcurs{{\mbox{$\hat \brcurs$}}}
-% You will have to load the pictures into whatever
-% tex editor you're using. For Overleaf that means
-% putting them in the side bar.
-% download the pictures at this link: https://www.reed.edu/physics/faculty/griffiths/script_r.zip
-
-%for pictures and diagrams
-\usepackage{tikz}
-\usepackage{xifthen}
-\usepackage{float} %allows better positioning of figures using [H]
-\usepackage{wrapfig} %don't be silly, wrap that figgy!
-\usepackage{graphicx} %for griffiths r
-\usepackage{mdframed} %for boxes around important stuff
-
 % customize lists
 \newlist{subpart}{enumerate}{1} % useful sublist
 \setlist[subpart,1]{label=(\alph*)}
@@ -157,6 +140,22 @@
 \newcommand{\wincgr}[2]{{\par \centering \includegraphics[width=#1\textwidth]{#2} \par}}
 \newcommand{\hincgr}[2]{{\par \centering \includegraphics[height=#1\textheight]{#2} \par}}
 
+% color boxes
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{theorems}
+\newtcbtheorem{psexample}{Example}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{ex}
+\newtcbtheorem{psidea}{Idea}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{id}
+\newtcbtheorem{pspattern}{Pattern}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{pt}
+\newtcbtheorem{psdefinition}{Definition}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{df}
+\newtcbtheorem{pstheorem}{Theorem}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{th}
+\newtcbtheorem{psremark}{Remark}{colback=purple!10,colframe=purple!40!black,fonttitle=\bfseries,breakable,enhanced}{rm}
+\newtcbtheorem{pslemma}{Lemma}{colback=violet!10,colframe=violet!40!black,fonttitle=\bfseries,breakable,enhanced}{lm}
+\newtcbtheorem{pssolution}{Solution}{colback=orange!10,colframe=orange!40!black,fonttitle=\bfseries,breakable,enhanced}{sn}
+\newtcbtheorem{pstrap}{Trap}{colback=red!10,colframe=red!40!black,fonttitle=\bfseries,breakable,enhanced}{tr}
+\newtcbtheorem{pscasestudy}{Case Study}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{cs}
+\tcbset{noparskip/.style={before={\par\pagebreak[0]\medskip\parindent=0pt},
+after={\par\medskip}}}
+
 % general math commands
 \newcommand{\lra}{\leftrightarrow}
 \newcommand{\mytilde}{{\,\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}\,}}
@@ -174,20 +173,25 @@
 \newcommand{\three}{\mathbf{III}}
 \newcommand{\from}{\leftarrow}
 \newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % it's dbar!
-\newcommand{\reals}{\mathbb{R}}
-\newcommand{\ints}{\mathbb{Z}}
-\newcommand{\natty}{\mathbb{N}}
-\newcommand{\rationals}{\mathbb{Q}}
-\newcommand{\complex}{\mathbb{C}}
-\newcommand{\xto}[1]{\xrightarrow{#1}}
-\newcommand{\unitv}[1]{\hat{\v{#1}}}
+\newcommand{\reals}{\mathbb{R}} %reals
+\newcommand{\ints}{\mathbb{Z}} %integers
+\newcommand{\natty}{\mathbb{N}} %naturals
+\newcommand{\complex}{\mathbb{C}} %complex
+\newcommand{\eff}{\mathbb{F}} %Axler field for LADR
+\newcommand{\xto}[1]{\xrightarrow{#1}} %right arrow with stuff over it
+\newcommand{\unitv}[1]{\hat{\v{#1}}} %unit vector
 \newcommand{\twovec}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 \newsavebox{\@brx} % double angle brackets
-\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}% left angle bracket
   \mathopen{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
-\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}% right angle bracket
   \mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
-\newcommand{\grad}[0]{\nabla}
+\newcommand{\grad}[0]{\nabla} %no one calls it nabla anymore...
+
+
+
+
+
 
 
 % improvements on existing commands
@@ -238,7 +242,6 @@
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Pfaff}{Pfaff}
 \DeclareMathOperator{\Res}{Res}
-\DeclareMathOperator{\proj}{proj}
 
 % QM and QFT commands
 \DeclarePairedDelimiter\ket{|}{\rangle} % use \ket* for large arguments
@@ -299,11 +302,11 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem*{psquestion}{\textcolor{blue}{Question}}
 \newtheorem*{psanswer}{\textcolor{purple}{Answer}}
-\newtheorem{motivation}{\textcolor{magenta}{Motivation}}
 \newtheorem*{intuition}{\textcolor{purple}{Intuition}}
 \newtheorem*{abuseofnotation}{\abuse{Abuse of Notation}}
 \newtheorem*{ezmath}{\textcolor{purple}{EZ Math}}
 \newtheorem*{example}{Example}
+\newtheorem{motivation}{Motivation}
 \newtheorem{corollary}{Corollary}
 \newtheorem{lemma}{Lemma}
 \newtheorem{definition}{\defdef{Definition}}
@@ -312,34 +315,12 @@
 \newtheorem*{proofsketch}{Proof Sketch}
 \renewenvironment{proof}{\noindent {\bfseries Proof.}\,}{\medskip}
 
-% color boxes
-\usepackage[many]{tcolorbox}
-\tcbuselibrary{theorems}
-\newtcbtheorem{psexample}{Example}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{ex}
-\newtcbtheorem{psidea}{Idea}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{id}
-\newtcbtheorem{psdefinition}{Definition}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{df}
-\newtcbtheorem{pstheorem}{Theorem}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{th}
-\newtcbtheorem{psremark}{Remark}{colback=purple!10,colframe=purple!40!black,fonttitle=\bfseries,breakable,enhanced}{rm}
-\newtcbtheorem{pslemma}{Lemma}{colback=violet!10,colframe=violet!40!black,fonttitle=\bfseries,breakable,enhanced}{lm}
-\newtcbtheorem{pssolution}{Solution}{colback=orange!10,colframe=orange!40!black,fonttitle=\bfseries,breakable,enhanced}{sn}
-\newtcbtheorem{pstrap}{Trap}{colback=red!10,colframe=red!40!black,fonttitle=\bfseries,breakable,enhanced}{tr}
-\newtcbtheorem{pscasestudy}{Case Study}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{cs}
-\tcbset{noparskip/.style={before={\par\pagebreak[0]\medskip\parindent=0pt},
-after={\par\medskip}}}
+%hw stuff
+\newtheorem{hwproblem}{Problem}
+\newtheorem{hwanswer}{Answer}
 
-%misc physics commands
-\newcommand{\pdiv}[1]{\text{div }#1} %purcell divergence
-\newcommand{\pcurl}[1]{\text{curl }#1} %purcell curl
-\let\div\stupiddivisionsymbol
-\newcommand{\div}[0]{\grad \cdot } %div
-\newcommand{\curl}[0]{\grad \times } %curl
-\newcommand{\krondel}[0]{\delta_{ij}} %Kronecker delta
-\newcommand{\levciv}[0]{\epsilon_{ijk}} %levi-civita
-\newcommand{\elec}[0]{\mathbf{E}} %bold electric field
-\newcommand{\magn}[0]{\mathbf{B}} %bold magnetic field
-\newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}} %griffiths r
-\newcommand{\vel}[0]{\mathbf{u}} %velocity
-\newcommand{\sik}[0]{\frac{1}{4 \pi \varepsilon}} %constant for EM SI units
+%environments
+\newenvironment{alphamerate}{\begin{enumerate}[(a)]}{\end{enumerate}}
 
 %the william magic
 \newcommand{\pd}[2][f]{\frac{\partial #1}{\partial #2}} %partial derivatives
@@ -356,12 +337,11 @@ after={\par\medskip}}}
 \newcommand{\vc}[0]{\Vec{c}} %vector c
 \newcommand{\sint}[1][]{\sin{\theta_{#1}}} %sine of theta
 \newcommand{\cost}[1][]{\cos{\theta_{#1}}} %cosine of theta
-\newcommand{\tant}[1][]{\tan{\theta_{#1}}} %tan of theta
 \newcommand{\abs}[1]{|#1|} %absolute value
 \newcommand{\bigo}[0]{\mathcal{O}} %Big-O
 \newcommand{\defdef}[1]{{\textbf{\textcolor{thoughtblue}{#1}}}} %for the names of definitions
-\newcommand{\abuse}[1]{{\textbf{\textcolor{magenta}{#1}}}}
-\newcommand{\mathcolon}[0]{\, \newordinarycolon \,} %for function mapping colons
+\newcommand{\abuse}[1]{{\textbf{\textcolor{magenta}{#1}}}} % for abusive notation
+\newcommand{\mathcolon}[0]{\; \newordinarycolon \;} %for function mapping colons
 \newcommand{\defeq}[0]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}} %def equals sign
 \newcommand{\limofi}[1]{\lim_{i \to \infty} #1_i} %lim to inf of var
 \newcommand{\bfa}[0]{\mathbf{a}} %vector a
@@ -374,14 +354,21 @@ after={\par\medskip}}}
 \newcommand{\bft}[0]{\mathbf{t}} %tangent vector
 \newcommand{\bfn}[0]{\mathbf{n}} %principal normal
 \newcommand{\binormie}[0]{\mathbf{b}} %binormal
-\newcommand{\fmap}[0]{\overset{f}{\to}} %map symbol with f on top
+\let\div\stupiddivisionsymbol
+\newcommand{\div}[1]{\text{div }#1} %purcell divergence
+\newcommand{\curl}[1]{\text{curl }#1} %purcell curl
+\newcommand{\fmap}[0]{\xmapsto{f}} %map symbol with f on top
+\newcommand{\krondel}[0]{\delta_{ij}} %Kronecker delta
+\newcommand{\levciv}[0]{\epsilon_{ijk}} %levi-civita
 \newcommand{\symsum}[0]{\sum_{sym}} %symmetric sum
 \newcommand{\cycsum}[0]{\sum_{cyc}} %cyclic sum
-\newcommand{\mathspace}{\hspace{0.5cm}} %math space to separate things in align mode
+\newcommand{\elec}[0]{\mathbf{E}} %bold electric field
+\newcommand{\magn}[0]{\mathbf{B}} %bold magnetic field
+\newcommand{\symdiff}[0]{\, \triangle \,} %symmetric difference
+\newcommand{\vel}[0]{\mathbf{u}} %velocity
 
 %EZ matrices
 %Matrix commands; two letters after pmat/bmat = #rows #columns. o = one, t = two, th = three. +4 is rare enough to not really save time.
-%example of how to use: \pmattho{1}{2}{3} gives a 1 x 3 parenthetical matrix with entries (1, 2, 3), in that order.
 
 %three rows
 \newcommand{\pmattho}[3]{\begin{pmatrix} #1\\ #2\\ #3 \end{pmatrix}}
@@ -454,9 +441,6 @@ after={\par\medskip}}}
 #1 & #2 & #3
 \end{bmatrix}}
 
-%environments
-\newenvironment{alphamerate}{\begin{enumerate}[(a)]}{\end{enumerate}}
-
 %among us character in latex :3
 
 \newcommand{\amogus}[3][]{%
@@ -487,4 +471,18 @@ after={\par\medskip}}}
 
 %\amongus[emotion (optional)]{color of body}{color of visor}
 
-%https://tex.stackexchange.com/questions/567009/there-is-a-tikz-impostor-among-us ---------> credit for amog u
+% tiny among us
+\def\sussy{{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{RedAmongUs.jpeg}}$}}} % tiny among us
+\def\nerdsmile{{\mbox{$\resizebox{.36in}{.36in}{\includegraphics{nerdSmile.jpeg}}$}}} % nerd smile; https://tenor.com/view/smile-gif-3850025562366029436
+% if you want to have a ``qed'' style image, this is what you have to do.
+% the name is of my linear algebra TA if you were wondering
+\def\pilastro{\mbox{$\resizebox{.24in}{.24in}{\includegraphics{pilastro.png}}$}}
+\def\pilastroqed{
+  \begin{flushright}
+  {\mbox{$\resizebox{.16in}{.16in}{\includegraphics{pilastro.png}}$}} % qed symbol my MAT 315 TA
+\end{flushright}}
+\def\filip{\mbox{$\resizebox{.08in}{.08in}{\includegraphics{filip.png}}$}}  % tiny picture of Filip "Numberguy" Samuelson; not a qed one.
+
+% you need to load the images into your directory to use them
+
+%https://tex.stackexchange.com/questions/567009/there-is-a-tikz-impostor-among-us ---------> credit for amog us
