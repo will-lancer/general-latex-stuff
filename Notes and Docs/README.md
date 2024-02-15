@@ -12,6 +12,7 @@ this saves about 95% of the time it normally takes
 to create these bad boys. Worth stealing my basic code
 if it's the only thing you take.
 * amogus :3 😈 📮
+* Pilastro...
 * Saved a lot of bummy commands LaTeX auto-gives you (like who actually types \nabla for the gradient 💀).
 * Various other things that I'm probably forgetting.
 
