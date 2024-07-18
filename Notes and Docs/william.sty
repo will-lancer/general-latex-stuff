@@ -23,9 +23,9 @@
 \usepackage{slashed}      % Feynman slash
 \usepackage{bbm}          % indicator functions
 \usepackage{anyfontsize}  % adjust font sizes freely
-\usepackage{marvosym} 	  %heart emoji
+\usepackage{marvosym} 	  % heart emoji
 
-%for writing code in LaTeX
+% for writing code in LaTeX
 \usepackage{listings}
 \newenvironment{python}{\begin{lstlisting}[language=Python]}{\end{lstlisting}}
 
@@ -37,16 +37,6 @@
 % make headers sans serif; incompatible with titlesec and others
 \usepackage{sectsty}
 \allsectionsfont{\normalfont\sffamily\bfseries}
-
-% comments for personal notes
-\usepackage{xcolor}
-\definecolor{notered}{rgb}{1.0,0.1,0.1}
-\definecolor{thoughtblue}{rgb}{0.1,0.1,1.0}
-\newcommand{\question}[1]{\color{notered} (\textbf{#1}) \color{black}}
-\newcommand{\thought}[1]{\color{thoughtblue} (\textbf{#1})\color{black}}
-\newcommand{\answer}[1]{\color{green} (\textbf{#1})\color{black}}
-\newcommand{\note}[1]{\color{purple} (\textbf{#1}) \color{black}}
-
 
 % use links
 \usepackage{hyperref}
@@ -142,27 +132,192 @@
 \newcommand{\hincgr}[2]{{\par \centering \includegraphics[height=#1\textheight]{#2} \par}}
 
 % color boxes
+
+\usepackage[usenames,dvipsnames]{xcolor} % more colors; needs
+% to be loaded before pgfplots or else there will be a conflict.
+
+% comments for personal notes
+\definecolor{notered}{rgb}{1.0,0.1,0.1}
+\definecolor{thoughtblue}{rgb}{0.1,0.1,1.0}
+\newcommand{\question}[1]{\color{notered} (\textbf{#1}) \color{black}}
+\newcommand{\thought}[1]{\color{thoughtblue} (\textbf{#1})\color{black}}
+\newcommand{\answer}[1]{\color{green} (\textbf{#1})\color{black}}
+\newcommand{\note}[1]{\color{purple} (\textbf{#1}) \color{black}}
+\newcommand{\vocab}[1]{\textbf{\color{blue}\sffamily #1}}
+
+% thicc colorboxes
+
 \usepackage[many]{tcolorbox}
 \tcbuselibrary{theorems}
-\newtcbtheorem{psexample}{Example}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{ex}
-\newtcbtheorem{psidea}{Idea}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{id}
-\newtcbtheorem{pspattern}{Pattern}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{pt}
-\newtcbtheorem{psdefinition}{Definition}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{df}
-\newtcbtheorem{pstheorem}{Theorem}{colback=blue!10,colframe=blue!40!black,fonttitle=\bfseries,breakable,enhanced}{th}
-\newtcbtheorem{psremark}{Remark}{colback=purple!10,colframe=purple!40!black,fonttitle=\bfseries,breakable,enhanced}{rm}
-\newtcbtheorem{pslemma}{Lemma}{colback=violet!10,colframe=violet!40!black,fonttitle=\bfseries,breakable,enhanced}{lm}
-\newtcbtheorem{pssolution}{Solution}{colback=orange!10,colframe=orange!40!black,fonttitle=\bfseries,breakable,enhanced}{sn}
-\newtcbtheorem{pstrap}{Trap}{colback=red!10,colframe=red!40!black,fonttitle=\bfseries,breakable,enhanced}{tr}
-\newtcbtheorem{pscasestudy}{Case Study}{colback=green!10,colframe=green!40!black,fonttitle=\bfseries,breakable,enhanced}{cs}
+
+% red
+\newtcbtheorem{pstrap}{Trap}{colback=red!10,colframe=red!50!black,fonttitle=\bfseries,breakable,enhanced}{tr}
+\newtcbtheorem{pstechnique}{Technique}{colback=red!10,colframe=red!50!black,fonttitle=\bfseries,breakable,enhanced}{te}
+
+% orange
+\newtcbtheorem{pssolution}{Solution}{colback=orange!10,colframe=orange!50!black,fonttitle=\bfseries,breakable,enhanced}{sn}
+
+% cyan
+\newtcbtheorem{pscanonprob}{Canonical Problems}{colback=cyan!10,colframe=cyan!50!black,fonttitle=\bfseries,breakable,enhanced}{sn}
+
+% green
+\newtcbtheorem{psexample}{Example}{colback=green!10,colframe=green!50!black,fonttitle=\bfseries,breakable,enhanced}{ex}
+\newtcbtheorem{pscasestudy}{Case Study}{colback=green!10,colframe=green!50!black,fonttitle=\bfseries,breakable,enhanced}{cs}
+
+% blue
+\newtcbtheorem{psidea}{Idea}{colback=blue!10,colframe=blue!50!black,fonttitle=\bfseries,breakable,enhanced}{id}
+\newtcbtheorem{pspattern}{Pattern}{colback=blue!10,colframe=blue!50!black,fonttitle=\bfseries,breakable,enhanced}{pt}
+\newtcbtheorem{psdefinition}{Definition}{colback=blue!10,colframe=blue!50!black,fonttitle=\bfseries,breakable,enhanced}{df}
+\newtcbtheorem{pstheorem}{Theorem}{colback=blue!10,colframe=blue!50!black,fonttitle=\bfseries,breakable,enhanced}{th}
+
+% purple
+\newtcbtheorem{psremark}{Remark}{colback=purple!10,colframe=purple!50!black,fonttitle=\bfseries,breakable,enhanced}{rm}
+
+% violet (actually purple)
+\newtcbtheorem{pslemma}{Lemma}{colback=violet!10,colframe=violet!50!black,fonttitle=\bfseries,breakable,enhanced}{lm}
+
 \tcbset{noparskip/.style={before={\par\pagebreak[0]\medskip\parindent=0pt},
 after={\par\medskip}}}
+
+
+% skinny (mdframed) colorboxes
+% skinny (mdframed) colorboxes
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+
+% blue
+
+\mdfdefinestyle{mdbluebox}{%
+roundcorner=10pt,
+linewidth=1pt,
+skipabove=12pt,
+innerbottommargin=9pt,
+skipbelow=2pt,
+linecolor=blue,
+nobreak=false,
+backgroundcolor=TealBlue!5,
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{MidnightBlue},
+    mdframed={style=mdbluebox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{thmbluebox}
+
+\declaretheorem[%
+        style=thmbluebox,name=Definition,numberwithin=section]{ddefinition}
+\declaretheorem[%
+        style=thmbluebox,name=Proposition,numberwithin=section]{pproposition}
+\declaretheorem[%
+        style=thmbluebox,name=Theorem,numberwithin=section]{ttheorem}
+
+% red
+
+\mdfdefinestyle{mdredbox}{%
+linewidth=0.5pt,
+skipabove=12pt,
+frametitleaboveskip=5pt,
+frametitlebelowskip=0pt,
+skipbelow=2pt,
+frametitlefont=\bfseries,
+innertopmargin=4pt,
+innerbottommargin=8pt,
+nobreak=false,
+backgroundcolor=Salmon!5,
+linecolor=RawSienna,
+}
+\declaretheoremstyle[
+    headfont=\bfseries\color{RawSienna},
+    mdframed={style=mdredbox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt},
+  ]{thmredbox}
+
+\declaretheorem[%
+        style=thmredbox,name=Intuition,numberwithin=section]{iintuition}
+
+% green
+
+\mdfdefinestyle{mdgreenbox}{%
+    skipabove=8pt,
+    skipbelow=0pt,
+    linewidth=2pt,
+    rightline=false,
+    leftline=true,
+    topline=false,
+    bottomline=false,
+    linecolor=ForestGreen,
+    backgroundcolor=ForestGreen!5,
+}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+    bodyfont=\normalfont,
+    spaceabove=2pt,
+    spacebelow=1pt,
+    mdframed={style=mdgreenbox},
+    headpunct={ --- },
+]{thmgreenbox}
+
+\declaretheorem[%
+        style=thmgreenbox,name=Example,numberwithin=section]{eexample}
+\declaretheorem[%
+        style=thmgreenbox,name=Question,numberwithin=section]{qquestion}
+
+% black
+        
+\mdfdefinestyle{mdblackbox}{%
+    skipabove=8pt,
+    linewidth=3pt,
+    rightline=false,
+    leftline=true,
+    topline=false,
+    bottomline=false,
+    linecolor=black,
+    backgroundcolor=RedViolet!5!gray!5,
+}
+\declaretheoremstyle[
+    headfont=\bfseries,
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=mdblackbox}
+]{thmblackbox}
+
+\declaretheorem[%
+        style=thmblackbox,name=Note,numberwithin=section]{nnote}
+
+% purple
+
+\mdfdefinestyle{mdpurplebox}{%
+    roundcorner=10pt,
+    linewidth=1pt,
+    skipabove=12pt,
+    skipbelow=12pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=black,
+    nobreak=false,
+    backgroundcolor=Orchid!10,
+}
+
+\declaretheoremstyle[
+    headfont=\bfseries,
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=mdpurplebox}
+  ]{thmpurplebox}
+
+\declaretheorem[%
+        style=thmpurplebox,name=Remark,numberwithin=section]{reemark}
+
 
 % general math commands
 \newcommand{\lra}{\leftrightarrow}
 \newcommand{\mytilde}{{\,\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}\,}}
 \newcommand{\myceil}[1]{\left \lceil #1 \right \rceil }
 \newcommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
-\newcommand{\rth}{\mathbb{R}^3}
 \newcommand{\lie}[1]{\mathfrak{#1}} % Lie algebra
 \newcommand{\cev}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}  % backwards vector arrow
 \newcommand{\dual}{\ast} % dual of a differential form
@@ -188,26 +343,36 @@ after={\par\medskip}}}
   \mathopen{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
 \newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\) }% right angle bracket
   \mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
-\newcommand{\grad}[0]{\nabla} % no one calls it nabla anymore...
-\let\div\stupiddivisionsymbol % dumbass division symbol that no one should use after
-% the age of five; renaming to allow for the next command
-\newcommand{\div}[0]{\grad \cdot} % div
-\newcommand{\curl}[0]{\grad \times} % curl
 \newcommand{\cat}[1]{\sffamily{#1}} % font for writing category names a la Paolo Aluffi
-
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} % partial differentiation
+\newcommand{\rn}[0]{\reals^n} % r^n space
+\newcommand{\sint}[1][]{\sin{\theta_{#1}}} % sine of theta
+\newcommand{\cost}[1][]{\cos{\theta_{#1}}} % cosine of theta
+\newcommand{\bigo}[0]{\mathcal{O}} % Big-O
+\newcommand{\defdef}[1]{{\textbf{\textcolor{thoughtblue}{#1}}}} % for the names of definitions
+\newcommand{\abuse}[1]{{\textbf{\textcolor{magenta}{#1}}}} %  for abusive notation
+\newcommand{\defeq}[0]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}} % def equals sign
+\newcommand{\bfx}[0]{\mathbf{x}} % vector x
+\newcommand{\fmap}[0]{\xmapsto{f}} % map symbol with f on top
+\newcommand{\elec}[0]{\mathbf{E}} % bold electric field
+\newcommand{\magn}[0]{\mathbf{B}} % bold magnetic field
+\newcommand{\ddt}[1]{\frac{d}{dt} \left( #1 \right)} % mostly used for the Euler Lagrange equations
+\newcommand{\paren}[1]{\left( \right)} % for parentheses
 
 % improvements on existing commands
-\let\oldemptyset\emptyset         % save bad looking empty set
-\let\emptyset\varnothing          % good looking empty set
-\let\det\relax                    % determinant with correct exponent placement
+\let\oldemptyset\emptyset           % save bad looking empty set
+\let\emptyset\varnothing            % good looking empty set
+\let\det\relax                      % determinant with correct exponent placement
+
 \DeclareMathOperator{\det}{det} 
+\newcommand{\grad}[0]{\nabla}       % no one calls it nabla anymore...
 
+\let\div\stupiddivisionsymbol       % dumbass division symbol that no one should use after
+                                    % the age of five; renaming to allow for the next command
 
-\usepackage{etoolbox} % remove extra spacing around colons, for functions
-\DeclareMathSymbol{\newordinarycolon}{\mathord}{operators}{"3A} % set up ordinary colon
-\patchcmd{\colon}{:}{\newordinarycolon}{}{} % remove : in definition of \colon to avoid infinite loop
-\begingroup\lccode`~=`: \lowercase{\endgroup\let~}\colon % turn : into \colon
-\AtBeginDocument{\mathcode`:="8000 } % make : math active
+\newcommand{\div}[0]{\grad \cdot}   % div (for grown-ups!)
+\newcommand{\curl}[0]{\grad \times} % curl
+\newcommand{\noin}[0]{\noindent}    % no indent
 
 % algebra commands
 \newcommand{\union}{\cup}
@@ -251,7 +416,7 @@ after={\par\medskip}}}
 \newcommand{\braket}[2]{\langle #1 | #2 \rangle}
 \newcommand{\bigbraket}[2]{\left\langle #1 \middle| #2 \right\rangle}
 
-\newcommand{\normord}[1]{\,\newordinarycolon\!\mathrel{#1}\!\newordinarycolon\,}
+\newcommand{\normord}[1]{\,\colon\!\mathrel{#1}\!\colon\,}
 \renewcommand{\bar}[1]{\overline{#1}}
 \renewcommand{\sl}[1]{\slashed{#1}} % Feynman slash
 \newcommand{\msbar}{\overline{\text{MS}}}
@@ -302,6 +467,7 @@ after={\par\medskip}}}
 % theorem commands
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}
+\newtheorem*{claim}{Claim}
 \newtheorem*{psquestion}{\textcolor{blue}{Question}}
 \newtheorem*{psanswer}{\textcolor{purple}{Answer}}
 \newtheorem*{intuition}{\textcolor{purple}{Intuition}}
@@ -323,26 +489,6 @@ after={\par\medskip}}}
 
 %environments
 \newenvironment{alphamerate}{\begin{enumerate}[(a)]}{\end{enumerate}}
-
-% the william magic
-\newcommand{\noin}[0]{\noindent} % no indent
-\newcommand{\rn}[0]{\reals^n} % r^n space
-\newcommand{\sint}[1][]{\sin{\theta_{#1}}} % sine of theta
-\newcommand{\cost}[1][]{\cos{\theta_{#1}}} % cosine of theta
-\newcommand{\bigo}[0]{\mathcal{O}} % Big-O
-\newcommand{\defdef}[1]{{\textbf{\textcolor{thoughtblue}{#1}}}} % for the names of definitions
-\newcommand{\abuse}[1]{{\textbf{\textcolor{magenta}{#1}}}} %  for abusive notation
-\newcommand{\mathcolon}[0]{\; \newordinarycolon \;} % for function mapping colons
-\newcommand{\defeq}[0]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}} % def equals sign
-\newcommand{\summy}[0]{\sum_{n = 1}^{N}} % sum to N
-\newcommand{\bfx}[0]{\mathbf{x}} % vector x
-\newcommand{\fmap}[0]{\xmapsto{f}} % map symbol with f on top
-\newcommand{\krondel}[0]{\delta_{\mu \nu}} % Kronecker delta
-\newcommand{\levciv}[0]{\epsilon_{\mu \nu \rho}} % levi-civita
-\newcommand{\symsum}[0]{\sum_{sym}} % symmetric sum
-\newcommand{\cycsum}[0]{\sum_{cyc}} % cyclic sum
-\newcommand{\elec}[0]{\mathbf{E}} % bold electric field
-\newcommand{\magn}[0]{\mathbf{B}} % bold magnetic field
 
 % EZ matrices:
 % Matrix commands; two letters after pmat/bmat = #rows #columns.
@@ -421,6 +567,8 @@ after={\par\medskip}}}
 #1 & #2 & #3
 \end{bmatrix}}
 
+% you are entering the land of miscellanea
+
 % among us character in latex :3
 
 \newcommand{\amogus}[3][]{%
@@ -451,16 +599,23 @@ after={\par\medskip}}}
 
 % \amongus[emotion (optional)]{color of body}{color of visor}
 
-% tiny among us
-\def\sussy{{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{RedAmongUs.jpeg}}$}}} % tiny among us
-\def\nerdsmile{{\mbox{$\resizebox{.36in}{.36in}{\includegraphics{nerdSmile.jpeg}}$}}} % nerd smile
-\def\pilastro{\mbox{$\resizebox{.24in}{.24in}{\includegraphics{pilastro.png}}$}} % if you want to have a ``qed'' style image, this is what you have to do.
-\def\pilastroqed{
-  \begin{flushright}
-  {\mbox{$\resizebox{.16in}{.16in}{\includegraphics{pilastro.png}}$}} % qed symbol my MAT 315 TA
-\end{flushright}}
-\def\filip{\mbox{$\resizebox{.08in}{.08in}{\includegraphics{filip.png}}$}}  % tiny picture of Filip "Numberguy" Samuelson; not a qed one
-
-% you need to load the images into your directory to use them
-
 % https://tex.stackexchange.com/questions/567009/there-is-a-tikz-impostor-among-us ---------> credit for amog us
+
+% QED style images
+
+% \def\name_qed{
+% 	\begin{flushright}
+% 	{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{image.png}}$}}
+%	\end{flushright}
+% }
+
+% Apple emojis in LaTeX. You need to load the folder
+% containing the files into your directory; I've
+% named mine "Emojis"
+
+\def\crying{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/Crying.jpeg}}$}} % crying emoji
+\def\cool{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/cool.jpeg}}$}} % cool emoji
+\def\nerd{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/nerd.jpeg}}$}} % nerd emoji
+\def\skull{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/Skull.jpeg}}$}} % skull emoji
+\def\thanks{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/praying.jpeg}}$}} % thanks emoji
+\def\eyes{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/eyes.jpeg}}$}} % eyes emoji
