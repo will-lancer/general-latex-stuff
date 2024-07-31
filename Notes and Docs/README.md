@@ -7,10 +7,7 @@ Some alterations I've made:
 * Added ~100 custom commands for personal ease of use.
 * Added multiple new theorems and color box templates.
 * Added new environment for creating alphabet lists instead of enumerated lists.
-* Added an ultra convenient way of creating matrices;
-this saves about 95% of the time it normally takes
-to create these bad boys. Worth stealing my basic code
-if it's the only thing you take.
+* Added some convenient commands for making matrices.
 * amogus :3 😈 📮
 * Pilastro...
 * Saved a lot of bummy commands LaTeX auto-gives you (like who actually types \nabla for the gradient 💀).
