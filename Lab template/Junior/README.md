@@ -21,7 +21,7 @@ fits at the time),
   \includegraphics[width=0.8\textwidth]{Path/figurename.jpeg}
   \caption{Caption.}
 \end{figure}
-'''
+```
 
 For tables,
 
@@ -38,7 +38,7 @@ For tables,
   \end{tabular}
   \caption{Caption.}
 \end{table}
-'''
+```
 
   * I personally use \vocab{} to highlight certain words in
     my introduction, mainly to make it easier for the TA to
