@@ -1,4 +1,4 @@
-This is my template for a general physics lab.
+This is my template for a general freshman physics lab.
 The original code was found by Googling "Lab template latex";
 you can find the original source [here](https://www.latextemplates.com/template/university-school-laboratory-report).
 
