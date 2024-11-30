@@ -5,10 +5,10 @@ goodies added by James Cross and myself.
 
 Some specific notes and basic things that you should know
 if you haven't written lab reports before:
-  * To typeset units, use $\si{\delimiter\unitname}$, e.g. $\si{\milli\volt}$
-    or $\si{\mega\ohm}$.
+  * To typeset units, use `$\si{\delimiter\unitname}$`, e.g. `$\si{\milli\volt}$`
+    or `$\si{\mega\ohm}$`.
   * All figures and tables follow the same basic template
-    (note that [H] in the declaration of the figures/tables;
+    (note that `[H]` in the declaration of the figures/tables;
     this is essential. It's the thing that puts the table where
     you want it to go, i.e. it doesn't let it float), e.g.:
 
