@@ -15,18 +15,17 @@ if you haven't written lab reports before:
 For figures (the \textwidth thing should be changed to whatever
 fits at the time),
 
+```
 \begin{figure}[H]
-
   \centering
-  
   \includegraphics[width=0.8\textwidth]{Path/figurename.jpeg}
-  
   \caption{Caption.}
-  
 \end{figure}
+'''
 
 For tables,
 
+```
 \begin{table}[H]
   \centering
   \begin{tabluar}{|c|c|c|}
@@ -39,6 +38,7 @@ For tables,
   \end{tabular}
   \caption{Caption.}
 \end{table}
+'''
 
   * I personally use \vocab{} to highlight certain words in
     my introduction, mainly to make it easier for the TA to
