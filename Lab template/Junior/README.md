@@ -16,9 +16,13 @@ For figures (the \textwidth thing should be changed to whatever
 fits at the time),
 
 \begin{figure}[H]
+
   \centering
+  
   \includegraphics[width=0.8\textwidth]{Path/figurename.jpeg}
+  
   \caption{Caption.}
+  
 \end{figure}
 
 For tables,
