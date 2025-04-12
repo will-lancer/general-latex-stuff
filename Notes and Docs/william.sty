@@ -14,17 +14,24 @@
   \tableofcontents
   \microtypesetup{protrusion=true}
 }
+
+% picture stuff
+\usepackage{graphicx} % for pictures
 \usepackage{float} % for better figure placement
+\usepackage{wrapfig} % don't be silly, wrap that figgy!
+
 
 % packages for one-off commands
-\usepackage{tensor}       % tensor indices
-\usepackage[]{units}      % nice units
-\usepackage[shortlabels]{enumitem}     % better enumeration
-\usepackage{slashed}      % Feynman slash
-\usepackage{bbm}          % indicator functions
-\usepackage{anyfontsize}  % adjust font sizes freely
-\usepackage{marvosym} 	  % heart emoji
-\usepackage{CJKutf8}      % for writing chinese; use environment "chinese"
+\usepackage{tensor}                 % tensor indices
+\usepackage[]{units}                % nice units
+\usepackage[shortlabels]{enumitem}  % better enumeration
+\usepackage{slashed}                % Feynman slash
+\usepackage{bbm}                    % indicator functions
+\usepackage{anyfontsize}            % adjust font sizes freely
+\usepackage{marvosym} 	            % heart emoji
+\usepackage{CJKutf8}                % for writing chinese; use environment "chinese"
+\usepackage{multicol}	 	    % for multiple columns
+\usepackage[makeroom]{cancel}       % for canceling math
 
 % for writing code in LaTeX
 \usepackage{listings}
@@ -38,6 +45,13 @@
 % make headers sans serif; incompatible with titlesec and others
 \usepackage{sectsty}
 \allsectionsfont{\normalfont\sffamily\bfseries}
+
+% big title for homework
+\newcommand{\bigtitle}[1]{
+    \begin{center}
+    \huge \textbf{#1}
+    \end{center}
+}
 
 % use links
 \usepackage{hyperref}
@@ -145,6 +159,7 @@
 \newcommand{\answer}[1]{\color{green} (\textbf{#1})\color{black}}
 \newcommand{\note}[1]{\color{purple} (\textbf{#1}) \color{black}}
 \newcommand{\vocab}[1]{\textbf{\color{blue}\sffamily #1}}
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}} % for a small bullet point
 
 % thicc colorboxes
 
@@ -181,7 +196,6 @@
 after={\par\medskip}}}
 
 
-% skinny (mdframed) colorboxes
 % skinny (mdframed) colorboxes
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed}
@@ -237,6 +251,10 @@ linecolor=RawSienna,
 
 \declaretheorem[%
         style=thmredbox,name=Intuition,numberwithin=section]{iintuition}
+\declaretheorem[%
+	style=thmredbox,name=Technique,numberwithin=section]{ttechnique}
+\declaretheorem[%
+        style=thmredbox,name=Example,numberwithin=section]{eexample}
 
 % yellow
 
@@ -285,8 +303,6 @@ backgroundcolor=Goldenrod!5,
 ]{thmgreenbox}
 
 \declaretheorem[%
-        style=thmgreenbox,name=Example,numberwithin=section]{eexample}
-\declaretheorem[%
         style=thmgreenbox,name=Question,numberwithin=section]{qquestion}
 
 % black
@@ -309,8 +325,8 @@ backgroundcolor=Goldenrod!5,
     mdframed={style=mdblackbox}
 ]{thmblackbox}
 
-% \declaretheorem[%
-%         style=thmblackbox,name=Note,numberwithin=section]{nnote}
+\declaretheorem[%
+         style=thmblackbox,name=Note,numberwithin=section]{nnote}
 
 % purple
 
@@ -356,7 +372,7 @@ backgroundcolor=CarnationPink!5,
 ]{thmpinkbox}
 
 \declaretheorem[%
-        style=thmpinkbox,name=Note,numberwithin=section]{nnote}
+        style=thmpinkbox,name=Preview,numberwithin=section]{ppreview}
 
 
 % general math commands
@@ -393,17 +409,22 @@ backgroundcolor=CarnationPink!5,
 \newcommand{\cat}[1]{\sffamily{#1}} % font for writing category names a la Paolo Aluffi
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} % partial differentiation
 \newcommand{\rn}[0]{\reals^n} % r^n space
-\newcommand{\sint}[1][]{\sin{\theta_{#1}}} % sine of theta
-\newcommand{\cost}[1][]{\cos{\theta_{#1}}} % cosine of theta
+\newcommand{\sint}{\sin{\theta}} % sine of theta
+\newcommand{\cost}{\cos{\theta}} % cosine of theta
 \newcommand{\bigo}[0]{\mathcal{O}} % Big-O
 \newcommand{\defeq}[0]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}} % def equals sign
 \newcommand{\bfx}[0]{\mathbf{x}} % vector x
 \newcommand{\bfr}[0]{\mathbf{r}} % vector r
+\newcommand{\bfq}[0]{\mathbf{q}} % vector q
+\newcommand{\bfe}[0]{\mathbf{e}} % vector e
+\newcommand{\bfk}[0]{\mathbf{k}} % vector k
+\newcommand{\bfp}[0]{\mathbf{p}} % vector p
 \newcommand{\fmap}[0]{\xmapsto{f}} % map symbol with f on top
 \newcommand{\elec}[0]{\mathbf{E}} % bold electric field
 \newcommand{\magn}[0]{\mathbf{B}} % bold magnetic field
 \newcommand{\ddt}[1]{\frac{d}{dt} \left( #1 \right)} % mostly used for the Euler Lagrange equations
-\newcommand{\paren}[1]{\left( \right)} % for parentheses
+\newcommand{\textline}[0]{\noindent\rule{\textwidth}{1pt}} % line that goes across the page
+
 
 % improvements on existing commands
 \let\oldemptyset\emptyset           % save bad looking empty set
@@ -419,6 +440,7 @@ backgroundcolor=CarnationPink!5,
 \newcommand{\div}[0]{\grad \cdot}   % div (for grown-ups!)
 \newcommand{\curl}[0]{\grad \times} % curl
 \newcommand{\noin}[0]{\noindent}    % no indent
+\newcommand{\adj}[0]{\dagger} 	    % Hermitian conjugate
 
 % algebra commands
 \newcommand{\union}{\cup}
@@ -440,7 +462,6 @@ backgroundcolor=CarnationPink!5,
 \DeclareMathOperator{\ad}{ad}
 \DeclareMathOperator{\Ad}{Ad}
 \DeclareMathOperator{\diag}{diag}
-\DeclareMathOperator{\adj}{adj}
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\sign}{sign}
@@ -514,11 +535,6 @@ backgroundcolor=CarnationPink!5,
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}
 \newtheorem*{claim}{Claim}
-\newtheorem*{psquestion}{\textcolor{blue}{Question}}
-\newtheorem*{psanswer}{\textcolor{purple}{Answer}}
-\newtheorem*{intuition}{\textcolor{purple}{Intuition}}
-\newtheorem*{abuseofnotation}{\abuse{Abuse of Notation}}
-\newtheorem*{ezmath}{\textcolor{purple}{EZ Math}}
 \newtheorem*{example}{Example}
 \newtheorem{motivation}{Motivation}
 \newtheorem{corollary}{Corollary}
@@ -660,10 +676,9 @@ backgroundcolor=CarnationPink!5,
 % containing the files into your directory; I've
 % named mine "Emojis"
 
-\def\crying{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/Crying.jpeg}}$}} % crying emoji
-\def\cool{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/cool.jpeg}}$}} % cool emoji
-\def\nerd{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/nerd.jpeg}}$}} % nerd emoji
-\def\skull{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/Skull.jpeg}}$}} % skull emoji
-\def\thanks{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/praying.jpeg}}$}} % thanks emoji
-\def\eyes{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/eyes.jpeg}}$}} % eyes emoji
-
+\def\crying{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/Crying.jpeg}}$}}	 % crying emoji
+\def\cool{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/cool.jpeg}}$}}	 % cool emoji
+\def\nerd{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/nerd.jpeg}}$}}	 % nerd emoji
+\def\skull{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/Skull.jpeg}}$}}	 % skull emoji
+\def\thanks{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/praying.jpeg}}$}}	 % thanks emoji
+\def\eyes{\mbox{$\resizebox{.16in}{.16in}{\includegraphics{Emojis/eyes.jpeg}}$}}         % eyes emoji
